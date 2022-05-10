@@ -22,11 +22,11 @@ const Router = () => {
         component={SignUp}
         options={{headerShown: false}}
       />
-      {/* <Stack.Screen
+      <Stack.Screen
         name="Home"
         component={Home}
         options={{headerShown: false}}
-      /> */}
+      />
     </Stack.Navigator>
   );
 };

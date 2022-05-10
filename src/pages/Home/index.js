@@ -4,11 +4,15 @@ import React from 'react';
 const Home = () => {
   return (
     <View>
-      <Text>Home</Text>
+      <Text style={styles.Text}>Home</Text>
     </View>
   )
 }
 
 export default Home;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  Text: {
+    color: 'black',
+  },
+})
