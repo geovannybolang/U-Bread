@@ -2,9 +2,10 @@ import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import React, {useState} from 'react';
 import {Button, Gap, Header, TextInput} from '../../components';
 import {launchImageLibrary} from 'react-native-image-picker';
+import {showMessage} from 'react-native-flash-message';
 
 const SignUp = ({navigation}) => {
-  const [photo, setPhoto] =  useState('');
+  const [photo, setPhoto] = useState('');
   const [hasPhoto, setHasPhoto] = useState(false);
   const getPhoto = async () => {
     const result = await launchImageLibrary({
@@ -12,8 +13,18 @@ const SignUp = ({navigation}) => {
       maxWidth: 200,
       includeBase64: true,
     });
-    setPhoto(result.assets[0].uri)
-    setHasPhoto (true);
+    if (result.didCancel) {
+      setHasPhoto(false);
+      showMessage: ({
+        message: 'Photo upload cancelled!',
+        type: 'default',
+        backgroundColor: '#F45050',
+        color: 'white',
+      });
+    } else {
+      setPhoto(result.assets[0].uri);
+      setHasPhoto(true);
+    }
   };
 
   return (
@@ -23,15 +34,14 @@ const SignUp = ({navigation}) => {
         <View style={styles.avatarWrapper}>
           <View style={styles.border}>
             <TouchableOpacity onPress={getPhoto} activeOpacity={0.5}>
-             {
-               !hasPhoto && (
-               <View style={styles.addPhoto}>
-               <Text style={styles.addPhotoText}>Add Photo</Text>
-             </View>
-             )}
-             {
-               hasPhoto && <Image source ={{uri: photo}} style={styles.avatar} />
-             }
+              {!hasPhoto && (
+                <View style={styles.addPhoto}>
+                  <Text style={styles.addPhotoText}>Add Photo</Text>
+                </View>
+              )}
+              {hasPhoto && (
+                <Image source={{uri: photo}} style={styles.avatar} />
+              )}
             </TouchableOpacity>
           </View>
         </View>
@@ -48,7 +58,7 @@ const SignUp = ({navigation}) => {
         <Button title="Continue" />
         <Gap height={26} />
         <Text style={styles.Text}>Already have account?</Text>
-        <Button title="Sign In" onPress={() => navigation.navigate('SignIn')}/>
+        <Button title="Sign In" onPress={() => navigation.navigate('SignIn')} />
       </View>
     </View>
   );
@@ -80,9 +90,9 @@ const styles = StyleSheet.create({
     borderRadius: 90,
   },
   avatar: {
-    height:90,
-    width:90,
-    borderRadius:90,
+    height: 90,
+    width: 90,
+    borderRadius: 90,
   },
   addPhotoText: {
     fontSize: 12,
