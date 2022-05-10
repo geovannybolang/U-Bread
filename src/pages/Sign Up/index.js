@@ -15,8 +15,8 @@ const SignUp = ({navigation}) => {
     });
     if (result.didCancel) {
       setHasPhoto(false);
-      showMessage: ({
-        message: 'Photo upload cancelled!',
+      showMessage({
+        message: 'Unggah foto dibatalkan',
         type: 'default',
         backgroundColor: '#F45050',
         color: 'white',
@@ -55,7 +55,7 @@ const SignUp = ({navigation}) => {
         <Gap height={26} />
         <TextInput title="Password" placeholder="Type your password" />
         <Gap height={40} />
-        <Button title="Continue" />
+        <Button title="Continue" onPress={() => navigation.navigate('Home')} />
         <Gap height={26} />
         <Text style={styles.Text}>Already have account?</Text>
         <Button title="Sign In" onPress={() => navigation.navigate('SignIn')} />
