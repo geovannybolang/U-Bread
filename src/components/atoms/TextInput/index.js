@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 14,
     fontFamily: 'Inter-Bold',
+    color: 'black',
   },
 
   input: {

@@ -4,5 +4,6 @@ import SignIn from './Sign In';
 import SignUp from './Sign Up';
 import About from './About';
 import Home from './Home';
+import SplashScreenWelcome from './SplashScreenWelcome';
 
-export {SplashScreen, SignIn, SignUp, About, Home};
+export {SplashScreen, SplashScreenWelcome, SignIn, SignUp, About, Home};
