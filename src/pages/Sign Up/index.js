@@ -79,7 +79,6 @@ const styles = StyleSheet.create({
 
   Text: {
     textAlign: 'center',
-    color: 'black',
   },
 
   addPhoto: {
