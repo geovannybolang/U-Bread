@@ -10,13 +10,17 @@ const Home = () => {
           <Text style={styles.Text}>
             Logo
           </Text>
-          <Text style={styles.Text2}>
+          </View>
+          <View style={styles.container2}>
+          <Text style={styles.Text}>
             Menu
           </Text>
-        </View>
-        <View styles={styles.contentWrapper2}>
-          <Text>Test</Text>
-        </View>
+          </View>
+          <View style={styles.container3}>
+          <Text style={styles.Text}>
+            Logo
+          </Text>
+          </View>
       </View>
     </View>
   )
@@ -41,7 +45,7 @@ const styles = StyleSheet.create({
     // paddingVertical: 38,
     // paddingBottom: 24,
     backgroundColor: 'white',
-    flexDirection: 'column',
+    flexDirection: 'row',
     alignItems: 'flex-start',
   },
   
@@ -51,13 +55,22 @@ const styles = StyleSheet.create({
     // paddingBottom: 24,
     backgroundColor: 'white',
     flexDirection: 'column',
-    alignItems: 'flex-start',
+    alignItems: 'center',
   },
+  contentWrapper3: {
+    // paddingLeft: 24,
+    // paddingVertical: 38,
+    // paddingBottom: 24,
+    backgroundColor: 'white',
+    flexDirection: 'column',
+    alignItems: 'flex-end',
+  },
+
 
   Text: {
     paddingTop: 17,
     paddingLeft: 9,
-    paddingRight: 101,
+    paddingHorizontal: 90,
     fontSize: 25,
     fontFamily: 'Poppins-Medium',
     color: '#020202',
@@ -70,5 +83,13 @@ const styles = StyleSheet.create({
     color: '#020202',
     // alignSelf: 'flex-start',
     // flexDirection: 'column',
-  }
+  },
+
+  Text3: {
+    paddingTop: 17,
+    fontSize: 25,
+    fontFamily: 'Poppins-Medium',
+    color: '#020202',
+    
+  },
 })

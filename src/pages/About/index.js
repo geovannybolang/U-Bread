@@ -1,15 +1,15 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
-import {Header} from '../../components';
+import {HeaderCenter, Button, Gap} from '../../components';
 import {Logo} from '../../assets';
-import {Back} from '../../assets';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-const About = ({title, onPress}) => {
+
+const About = ({navigation}) => {
   return (
     <View>
-      <Header />
-      <Text style={styles.Text}>About</Text>
-      <Logo style={styles.logo} />
+      <HeaderCenter title="About"/>
+      <View style={styles.page}>
+      <Logo />
+      </View>
       <View style={styles.container}>
         <Text style={styles.text}>
           Aplikasi ini menyediakan fitur menu makanan dan minuman, diantaranya
@@ -22,6 +22,11 @@ const About = ({title, onPress}) => {
           membantu mempermudah para konsumen untuk membeli makanan maupun
           minuman.
         </Text>
+        <Gap height={70} />
+        <Button
+          title="Back"
+          onPress={() => navigation.navigate('Home')}
+        />
       </View>
     </View>
   );
@@ -33,28 +38,24 @@ const styles = StyleSheet.create({
   Text: {
     color: 'black',
     fontSize: 30,
-    top: -50,
-    left: 160,
+
   },
-  abt: {
-    height: 40,
-    backgroundColor: '#4B6BA5',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 8,
-  },
+
   container: {
-    width: 297,
-    height: 100,
+    // width: 297,
+    // height: 100,
     // backgroundColor: 'black',
-    left: 55,
+    paddingHorizontal: 24,
+    
+    
   },
   text: {
     color: 'black',
     fontSize: 15,
   },
-  logo: {
-    left: 100,
+  page: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   text1: {
     color: 'black',
