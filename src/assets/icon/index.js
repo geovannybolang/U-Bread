@@ -1,3 +1,4 @@
 import Logo from './Logo.svg';
-
-export {Logo};
+import logo from './logo 2.png';
+import Back from './Arrow 2.png';
+export {Logo, logo, Back};
