@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
-import {HeaderCenter, Button, Gap} from '../../components';
+import {HeaderCenter, Button, Gap, Rectangle} from '../../components';
 import {Logo} from '../../assets';
 
 const About = ({navigation}) => {
@@ -24,6 +24,7 @@ const About = ({navigation}) => {
         </Text>
         <Gap height={70} />
         <Button title="Back" onPress={() => navigation.navigate('Account')} />
+
       </View>
     </View>
   );

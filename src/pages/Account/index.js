@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
 import {PP} from '../../assets';
-import { Button, ButtonW, Gap, HeaderCenter } from '../../components';
+import { Button, ButtonW, Gap, HeaderCenter, Rectangle } from '../../components';
 const Account = ({navigation}) => {
   return (
     <View>

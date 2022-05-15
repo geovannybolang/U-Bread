@@ -1,14 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
-import { Header } from '../../components';
-
-const Home = () => {
+import { HeaderCenter, Rectangle, Gap } from '../../components';
+import { 
+  RotiSrikaya, 
+  RotiCokelat,
+  RotiCokelatKeju,
+  RotiCokelatKacang
+} from '../../assets/icon';
+// import { RotiSrikaya} from '../../assets/image';
+const Home = ({onPress}) => {
   return (
     <View style={styles.page}>
-      <View style={styles.contentWrapper}>
+      <HeaderCenter title="Menu" />
+      {/* <View style={styles.contentWrapper}>
         <View style={styles.container}>
           <Text style={styles.Text}>
-            Logo
+            User
           </Text>
           </View>
           <View style={styles.container2}>
@@ -18,11 +25,53 @@ const Home = () => {
           </View>
           <View style={styles.container3}>
           <Text style={styles.Text}>
-            Logo
+            Cart
           </Text>
           </View>
+          </View> */}
+          <View style={styles.body}>
+          <TouchableOpacity onPress={onPress} activeOpacity={0.5}>
+        <View style={styles.container1}>
+          <View style={styles.b1}>
+            <RotiSrikaya />
+            <Text style={styles.food}>Roti Srikaya</Text>
+            <Text style={styles.price}>Rp 10.000 PROMO!</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+      <Gap height={40} />
+      <TouchableOpacity onPress={onPress} activeOpacity={0.5}>
+        <View style={styles.container1}>
+          <View style={styles.b1}>
+            <RotiCokelat />
+            <Text style={styles.food}>Roti Cokelat</Text>
+            <Text style={styles.price}>Rp 18.000</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+      <Gap height={40} />
+      <TouchableOpacity onPress={onPress} activeOpacity={0.5}>
+        <View style={styles.container1}>
+          <View style={styles.b1}>
+            <RotiCokelatKeju />
+            <Text style={styles.food}>Roti Cokelat Keju</Text>
+            <Text style={styles.price}>Rp 29.000</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+      <Gap height={40} />
+      <TouchableOpacity onPress={onPress} activeOpacity={0.5}>
+        <View style={styles.container1}>
+          <View style={styles.b1}>
+            <RotiCokelatKacang />
+            <Text style={styles.food}>Roti Cokelat Kacang</Text>
+            <Text style={styles.price}>Rp 25.000</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+            
+          </View>
       </View>
-    </View>
   )
 }
 
@@ -50,17 +99,11 @@ const styles = StyleSheet.create({
   },
   
   contentWrapper2: {
-    // paddingLeft: 24,
-    // paddingVertical: 38,
-    // paddingBottom: 24,
     backgroundColor: 'white',
     flexDirection: 'column',
     alignItems: 'center',
   },
   contentWrapper3: {
-    // paddingLeft: 24,
-    // paddingVertical: 38,
-    // paddingBottom: 24,
     backgroundColor: 'white',
     flexDirection: 'column',
     alignItems: 'flex-end',
@@ -90,6 +133,41 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontFamily: 'Poppins-Medium',
     color: '#020202',
-    
   },
+
+  body: {
+    flex: 1,
+    paddingBottom: 15,
+    backgroundColor: '#FEC582',
+    paddingTop: 20,
+    paddingLeft: 10,
+  },
+  container1: {
+    paddingTop: 10,
+    backgroundColor: '#EBEBEB',
+    paddingLeft: 17,
+    width: 325,
+    // height: 70,
+    // paddingEnd: 10,
+    borderRadius: 7,
+  },
+  b1: {
+    width: 100,
+    left: 35,
+    top: 10,
+},
+
+price: {
+  color: 'black',
+  top: -50,
+  left: 90,
+},
+
+food: {
+  color: 'black',
+  left: 90,
+  fontSize: 15,
+  top: -47,
+},
+
 })

@@ -61,6 +61,7 @@ const SignUp = ({navigation}) => {
         />
         <Gap height={26} />
         <Text style={styles.Text}>Already have account?</Text>
+        <Gap height={16} />
         <Button title="Sign In" onPress={() => navigation.navigate('SignIn')} />
       </View>
     </View>
@@ -82,6 +83,7 @@ const styles = StyleSheet.create({
 
   Text: {
     textAlign: 'center',
+    color: 'black',
   },
 
   addPhoto: {

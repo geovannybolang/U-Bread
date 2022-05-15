@@ -13,10 +13,11 @@ const SignIn = ({navigation}) => {
         />
         <Gap height={30} />
         <TextInput title="Password" placeholder="Type your password" />
-        <Gap height={50} />
+        <Gap height={25} />
         <Button title="Sign In" />
         <Gap height={50} />
         <Text style={styles.Text}>Don't have account?</Text>
+        <Gap height={10} />
         <Button
           title="Create Account"
           onPress={() => navigation.navigate('SignUp')}
