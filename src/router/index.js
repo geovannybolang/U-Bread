@@ -8,6 +8,7 @@ import {
   Home,
   Home_temp,
   About,
+  Account,
 } from '../pages';
 
 const Stack = createNativeStackNavigator();
@@ -48,6 +49,11 @@ const Router = () => {
       <Stack.Screen
         name="About"
         component={About}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Account"
+        component={Account}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

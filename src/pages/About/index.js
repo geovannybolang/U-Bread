@@ -8,7 +8,7 @@ const About = ({navigation}) => {
     <View>
       <HeaderCenter title="About"/>
       <View style={styles.page}>
-      <Logo />
+        <Logo />
       </View>
       <View style={styles.container}>
         <Text style={styles.text}>
@@ -23,10 +23,7 @@ const About = ({navigation}) => {
           minuman.
         </Text>
         <Gap height={70} />
-        <Button
-          title="Back"
-          onPress={() => navigation.navigate('Home')}
-        />
+        <Button title="Back" onPress={() => navigation.navigate('HomeBread')} />
       </View>
     </View>
   );

@@ -55,7 +55,10 @@ const SignUp = ({navigation}) => {
         <Gap height={26} />
         <TextInput title="Password" placeholder="Type your password" />
         <Gap height={40} />
-        <Button title="Continue" onPress={() => navigation.navigate('Home_temp')} />
+        <Button
+          title="Continue"
+          onPress={() => navigation.navigate('Account')}
+        />
         <Gap height={26} />
         <Text style={styles.Text}>Already have account?</Text>
         <Button title="Sign In" onPress={() => navigation.navigate('SignIn')} />
