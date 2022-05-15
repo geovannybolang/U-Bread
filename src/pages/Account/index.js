@@ -1,26 +1,29 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
 import {PP} from '../../assets';
-import { Button } from '../../components';
-import { ButtonW } from '../../components';
+import { Button, ButtonW, Gap, HeaderCenter } from '../../components';
 const Account = ({navigation}) => {
   return (
-    <View style={styles.page}>
-      <Text style={styles.text}>Account</Text>
-      <View style={styles.pic}>
-        <PP />
+    <View>
+      <HeaderCenter title="Account" />
+      <View style={styles.container}>
+      <PP style={styles.PP}/>
       </View>
+      <View style={styles.contentWrapper}>
       <Text style={styles.name}>Mawar Tumewu</Text>
-      <View style={styles.logout}>
+      <Gap height={60} />
         <Button
           title="Log Out"
           onPress={() => navigation.navigate('SplashScreen')} />
-      </View>
-      <View style={styles.about}>
+          <Gap height={29} />
         <ButtonW
           title="About"
           onPress={() => navigation.navigate('About')} />
-      </View>
+          <Gap height={29} />
+          <Button
+          title="Back"
+          onPress={() => navigation.navigate('Home')} />
+          </View>
     </View>
   );
 };
@@ -28,38 +31,31 @@ const Account = ({navigation}) => {
 export default Account;
 
 const styles = StyleSheet.create({
-  page: {
-    flex: 1,
+  container: {
+    
+    
     backgroundColor: '#FEC58C',
+    justifyContent: 'center',
+    alignItems: 'center',
+    
   },
-  text: {
-    color: 'black',
-    fontWeight: 'bold',
-    fontSize: 24,
-    left: 72,
-    top: 25,
-  },
-  pic: {
-    left: 157,
-    top: 72,
-    // width: 101,
-    // height: 100,
-    // backgroundColor: 'black',
-  },
-  logout: {
-      top: 150,
-      width: 350,
-      left: 30,
-  },
+
   name: {
       color: 'black',
-      fontSize: 17,
-      top: 90,
-    left: 150,
+      textAlign: 'center',
+      fontFamily: 'Inter-Bold',
+
   },
-  about: {
-    top: 170,
-    width: 350,
-    left: 30,
+
+  PP: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
+
+  contentWrapper:{
+    backgroundColor: '#FEC58C',
+    paddingHorizontal: 24,
+    paddingBottom: 1000,
+  },
+
 });

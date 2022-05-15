@@ -23,7 +23,7 @@ const About = ({navigation}) => {
           minuman.
         </Text>
         <Gap height={70} />
-        <Button title="Back" onPress={() => navigation.navigate('HomeBread')} />
+        <Button title="Back" onPress={() => navigation.navigate('Account')} />
       </View>
     </View>
   );
